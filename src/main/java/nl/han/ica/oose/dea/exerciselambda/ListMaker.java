@@ -35,7 +35,6 @@ public class ListMaker {
 
             }
         }
-
         return filteredMaleAdults;
     }
 
@@ -46,6 +45,8 @@ public class ListMaker {
      * @return A {@link List} containing only the Persons that are both female and adult
      */
     public List<Person> createFemaleAdultList(List<Person> allPersons) {
+
+        int adult = 18;
 
         if (allPersons == null) {
             return new ArrayList<>();
@@ -58,13 +59,11 @@ public class ListMaker {
                 LocalDate now = LocalDate.now();
                 Period age = Period.between(person.getBirthDate(), now);
 
-                if (age.getYears() > 18) {
+                if (age.getYears() > adult) {
                     filteredFemaleAdults.add(person);
                 }
             }
         }
-
-
         return filteredFemaleAdults;
     }
 
