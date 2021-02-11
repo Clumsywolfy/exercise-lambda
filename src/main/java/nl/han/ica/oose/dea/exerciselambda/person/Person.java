@@ -44,11 +44,11 @@ public class Person {
         return firstName;
     }
 
-    public Gender checkGender(Person person){
+    public String checkGender(Person person){
         if (getGender().equals(Gender.FEMALE)){
-            return Gender.FEMALE;
+            return "female";
         } else if (getGender().equals(Gender.MALE)){
-            return Gender.MALE;
+            return "male";
         }
         return null;
     }

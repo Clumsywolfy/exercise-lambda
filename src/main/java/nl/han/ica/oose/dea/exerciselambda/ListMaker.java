@@ -20,7 +20,7 @@ public class ListMaker {
         List<Person> filteredMaleAdults = new ArrayList<>();
 
         for (Person person : allPersons) {
-            if (person.checkGender(person) == Gender.MALE) {
+            if (person.checkGender(person) == "male") {
                 if (person.checkAge(person)) {
                     filteredMaleAdults.add(person);
                 }
@@ -37,12 +37,27 @@ public class ListMaker {
         List<Person> filteredFemaleAdults = new ArrayList<>();
 
         for (Person person : allPersons) {
-            if (person.checkGender(person) == Gender.FEMALE) {
+            if (person.checkGender(person) == "female") {
                 if (person.checkAge(person)) {
                     filteredFemaleAdults.add(person);
                 }
             }
         }
         return filteredFemaleAdults;
+    }
+
+    private List<Person> createAdultList(List<Person> allPersons, Gender gender) {
+
+        if (allPersons == null) {
+            return new ArrayList<>();
+        }
+
+        if(gender == "female"){
+
+        }
+
+        if (gender == "male"){
+
+        }
     }
 }
