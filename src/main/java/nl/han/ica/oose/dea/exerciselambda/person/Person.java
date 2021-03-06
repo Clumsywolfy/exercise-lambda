@@ -10,7 +10,6 @@ public class Person {
     private String lastName;
     private LocalDate birthDate;
     private Gender gender;
-    private int adult = 18;
 
     public String getLastName() {
         return lastName;
@@ -44,21 +43,15 @@ public class Person {
         return firstName;
     }
 
-    public String checkGender(Person person){
-        if (getGender().equals(Gender.FEMALE)){
-            return "female";
-        } else if (getGender().equals(Gender.MALE)){
-            return "male";
-        }
-        return null;
+    public boolean isGender(Gender gender){
+        return gender.equals(getGender());
     }
 
-    public boolean checkAge(Person person){
+    public boolean isAdult(int ADULT_AGE){
         LocalDate now = LocalDate.now();
-        Period age = Period.between(person.getBirthDate(), now);
-        if (age.getYears() > adult) {
-            return true;
-        }
-        return false;
+        Period age = Period.between(getBirthDate(), now);
+
+        return age.getYears() > ADULT_AGE;
     }
+
 }
